@@ -1,22 +1,22 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Styles from './login.module.css';
+import Styles from './home.module.css';
 
-const Login = (props) => {
+const Home = (props) => {
   const navigate = useNavigate();
   return (
-    <div className={Styles.login}>
-      <h1>This is login!</h1>
+    <div className={Styles.home}>
+      <h1>This is home!</h1>
       <button
         className={Styles.btn}
         onClick={() => {
-          navigate('home');
+          navigate('login');
         }}
       >
-        Home
+        Login
       </button>
     </div>
   );
 };
 
-export default Login;
+export default Home;

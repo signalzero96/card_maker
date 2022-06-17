@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import Styles from './home.module.css';
-import GoogleLogin from 'react-google-login';
 
 const Home = () => {
   const [isLogin, setIsLogin] = useState(false);
   const handleLogin = () => {
     setIsLogin((current) => !current);
-  };
-  const responseGoogle = (response) => {
-    console.log(response);
   };
 
   return (
@@ -36,15 +32,6 @@ const Home = () => {
           <div className={Styles.modal}>
             <div className={Styles.box}>
               <h1> Hello!!!! this is loona!!</h1>
-              <div className={Styles.break}></div>
-              <GoogleLogin
-                className={Styles.GoogleLogin}
-                clientId='658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
-                buttonText='Login in google'
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                cookiePolicy={'single_host_origin'}
-              />
               <div className={Styles.break}></div>
               <button
                 className={Styles.login}

@@ -4,7 +4,7 @@ import Home from './component/home/home';
 import Userpage from './component/userpage/userpage';
 import { Navigate, useRoutes } from 'react-router-dom';
 
-function App() {
+function App({}) {
   const routes = useRoutes([
     { path: '/', element: <Home /> },
     { path: 'home', element: <Home /> },

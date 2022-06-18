@@ -4,12 +4,15 @@ import './index.module.css';
 import App from './app';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import AuthService from './service/auth_service';
+
+const authService = new AuthService();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <App authService={authService} />
     </BrowserRouter>
   </StrictMode>
 );

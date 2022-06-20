@@ -6,6 +6,7 @@ import Footer from '../footer/footer';
 import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 import { useState } from 'react';
+import { useCallback } from 'react';
 
 const Maker = ({ FileInput, authService, cardRepository }) => {
   const navigateState = useLocation().state;
@@ -13,9 +14,9 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
   const [cards, setCards] = useState({});
   const [userId, setUserId] = useState(navigateState && navigateState.id);
 
-  const onLogout = () => {
+  const onLogout = useCallback(() => {
     authService.logout();
-  };
+  }, [authService]);
   useEffect(() => {
     if (!userId) {
       return;
